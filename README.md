@@ -1,8 +1,10 @@
 # Payload R2 Neon Starter
 
-> Production-ready **Payload CMS 3.x** starter template with Cloudflare R2 Storage, Neon PostgreSQL, and Resend Email integration.
+**ℹ️ Note:** This is a customized variant of the official [Payload Website Template](https://github.com/payloadcms/payload/tree/main/templates/website), tailored for my specific use cases and workflows. It is not actively maintained or updated regularly. For a regularly maintained template, please use the [official Payload templates](https://github.com/payloadcms/payload/tree/main/templates).
 
 ## ✨ Features
+
+> Production-ready **Payload CMS 3.x** starter template with Cloudflare R2 Storage, Neon PostgreSQL, and Resend Email integration.
 
 ### **Core Stack**
 - 🚀 **Payload CMS 3.69.0** - Modern headless CMS
