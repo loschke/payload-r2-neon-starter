@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Google Sans Code';
+  src: url('/fonts/GoogleSansCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Google Sans Code';
+  src: url('/fonts/GoogleSansCode-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: unset;
+    font-weight: unset;
+  }
+
+  :root {
+    /* Corporate Colors - Light Mode */
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 270 5% 8%; /* #151416 - Almost black */
+
+    --card: 16 100% 98%; /* #fff7f4 - Light pink/rose tint */
+    --card-foreground: 270 5% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 5% 8%;
+
+    --primary: 10 99% 50%; /* #FC2D01 - Brand Orange-Red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 49 23% 76%; /* #CFCAB4 - Sand/Beige accent */
+    --secondary-foreground: 270 5% 8%;
+
+    --muted: 16 100% 98%;
+    --muted-foreground: 240 3% 12%; /* #1E1E20 */
+
+    --accent: 49 23% 76%; /* Sand accent */
+    --accent-foreground: 270 5% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 49 23% 86%; /* Lighter sand for borders */
+    --input: 16 100% 98%;
+    --ring: 10 99% 50%; /* Primary color for focus rings */
+
+    --radius: 0.5rem;
+
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --error: 0 84.2% 60.2%;
+  }
+
+  [data-theme='dark'] {
+    /* Corporate Colors - Dark Mode */
+    --background: 270 5% 8%; /* #151416 - Deep black */
+    --foreground: 0 0% 100%; /* #ffffff */
+
+    --card: 245 11% 5%; /* #0d1015 - Even darker */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 245 11% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 10 99% 50%; /* #FC2D01 - Brand Orange-Red (stays same) */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 3% 12%; /* #1E1E20 - Dark gray */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 3% 12%;
+    --muted-foreground: 49 23% 76%; /* Sand color for muted text */
+
+    --accent: 49 23% 65%; /* Slightly darker sand for dark mode */
+    --accent-foreground: 270 5% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 3% 15%; /* Dark borders */
+    --input: 240 3% 12%;
+    --ring: 10 99% 50%; /* Primary color for focus rings */
+
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --error: 0 72% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+  }
+
+  /* Typography Hierarchy */
+  h1 {
+    @apply font-sans font-black text-4xl md:text-5xl lg:text-6xl tracking-tight;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-normal;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-normal;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl font-normal;
+  }
+
+  h5 {
+    @apply text-base md:text-lg font-normal;
+  }
+
+  h6 {
+    @apply text-sm md:text-base font-normal;
+  }
+
+  /* Body Text */
+  p,
+  li {
+    @apply font-sans text-base md:text-lg leading-relaxed;
+  }
+
+  strong,
+  b {
+    @apply font-bold;
+  }
+
+  /* Code & Pre */
+  code,
+  pre {
+    @apply font-mono;
+  }
+
+  /* Blockquotes with Instrument Serif Italic */
+  blockquote {
+    @apply font-serif italic text-lg border-l-4 border-primary pl-4 my-4;
+  }
+}
+
+html {
+  opacity: 0;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'] {
+  opacity: initial;
+}
